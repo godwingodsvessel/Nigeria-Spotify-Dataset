@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](https://github.com/yourusername/nigerian-spotify-analysis/blob/main/CONTRIBUTING.md)
 
-![Project Banner](images/banner.png)
+
 
 ## 📊 Overview
 
