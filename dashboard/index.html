@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nigerian Spotify Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="logo">
+          <h2><img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png" alt="Spotify Logo"><span class="highlight">NG</span></h2>
+        </div>
+
+        <div class="filter-group">
+          <label for="yearRange">Select Year Range</label>
+          <div class="range-inputs">
+            <input type="number" id="startYear" placeholder="Start" />
+            <span>-</span>
+            <input type="number" id="endYear" placeholder="End" />
+          </div>
+          <button id="applyYear">Apply Range</button>
+        </div>
+
+        <div class="filter-group">
+          <label for="genreSelect">Genre</label>
+          <select id="genreSelect">
+            <option value="All">All Genres</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="artistSelect">Artist</label>
+          <select id="artistSelect">
+            <option value="All">All Artists</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header>
+          <h1>Nigerian Spotify Analysis</h1>
+          <p>Insights into Streaming Trends & Audio Features</p>
+        </header>
+
+        <!-- Metrics Cards -->
+        <div class="metrics-grid">
+          <div class="card metric-card">
+            <h3>Total Songs</h3>
+            <p id="totalSongs">0</p>
+          </div>
+          <div class="card metric-card">
+            <h3>Avg Popularity</h3>
+            <p id="avgPopularity">0</p>
+          </div>
+          <div class="card metric-card">
+            <h3>Top Genre</h3>
+            <p id="topGenre">-</p>
+          </div>
+          <div class="card metric-card">
+            <h3>Avg Danceability</h3>
+            <p id="avgDance">0</p>
+          </div>
+        </div>
+
+        <!-- Charts Row 1 -->
+        <div class="charts-grid">
+          <div class="card chart-card">
+            <h3>Songs Released Over Time</h3>
+            <div class="chart-container">
+              <canvas id="timeChart"></canvas>
+            </div>
+          </div>
+          <div class="card chart-card">
+            <h3>Top 10 Genres</h3>
+            <div class="chart-container">
+              <canvas id="genreChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Row 2 -->
+        <div class="charts-grid">
+          <div class="card chart-card">
+            <h3>Danceability vs Energy</h3>
+            <div class="chart-container">
+              <canvas id="scatterChart"></canvas>
+            </div>
+          </div>
+          <div class="card chart-card">
+            <h3>Audio Features Profile</h3>
+            <div class="chart-container">
+              <canvas id="radarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tables -->
+        <div class="charts-grid">
+          <div class="card table-card">
+            <h3>🏆 Top Artists</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Artist</th>
+                  <th>Songs</th>
+                  <th>Avg Pop</th>
+                </tr>
+              </thead>
+              <tbody id="topArtistsTable">
+                <!-- Rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
+          <div class="card table-card">
+            <h3>🔥 Top Tracks</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Track</th>
+                  <th>Artist</th>
+                  <th>Pop</th>
+                </tr>
+              </thead>
+              <tbody id="topTracksTable">
+                <!-- Rows injected by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
